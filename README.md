@@ -21,9 +21,14 @@ topsecret
 ## jwt gitlab-ci
 Check your vault authentication method to know auth path.
 
+```bash
+vault read auth/jwt-1
+```
+
 ```yaml
 varables:
   CI_JWT_ROLE: role_gitlab_ci
+  VAULT_JWT_PATH: jwt-1
 
 job01:
   stage: test
@@ -31,7 +36,7 @@ job01:
     VAULT_ID_TOKEN:
       aud: $VAULT_ADDR
   before_script:
-    - export MY_VALUE="$(vault-get -a $VAULT_ADDR -j $VAULT_ID_TOKEN -r $CI_JWT_ROLE -m MyMountPoint -p my_secret_path -k my_secret_key)"
+    - export MY_VALUE="$(vault-get -a $VAULT_ADDR -j $VAULT_ID_TOKEN -ap $VAULT_JWT_PATH -r $CI_JWT_ROLE -m MyMountPoint -p my_secret_path -k my_secret_key)"
   script:
     - echo $MY_VALUE
 
