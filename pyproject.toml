@@ -1,7 +1,7 @@
 [project]
 name = "vault-get"
 description = "Python hvac cli wrapper: get kv from hashicorp vault by auth token or jwt."
-version = "0.0.1"
+version = "0.0.1-1"
 requires-python = ">=3.11"
 dynamic = ["dependencies", "optional-dependencies"]
 
