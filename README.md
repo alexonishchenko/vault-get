@@ -1,9 +1,12 @@
 # vault-get
 Python hvac cli wrapper: get kv from hashicorp vault by auth token or jwt. 
 
+# Why
+This tool helps when you don't have access to vanilla hashicorp **vault** binary and need only to retrieve kv from vault.
+
 # Usage
 
-vault-get can be used to print kv secrets via token or jwt auth.
+vault-get can be used to print kv secrets via token or jwt auth to stdout.
 
 ## vault auth token
 
