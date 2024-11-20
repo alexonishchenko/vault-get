@@ -27,10 +27,13 @@ topsecret
 Check your vault authentication method to know auth path.
 
 ```bash
+# vault auth method
 vault read auth/jwt-1
+... auth method details
 ```
 
 ```yaml
+# gitlab-ci config
 varables:
   CI_JWT_ROLE: role_gitlab_ci
   VAULT_JWT_PATH: jwt-1
